@@ -3,7 +3,9 @@ from HTMLParser import HTMLParser
 
 
 class hrefParser(HTMLParser):
-    hrefs = []
+    def __init__(self):
+        self.hrefs = []
+        self.reset()
 
     def handle_starttag(self, tag, attrs):
         if tag == 'a':
